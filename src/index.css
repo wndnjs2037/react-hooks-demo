@@ -1,13 +1,89 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  padding: 0 20px;
+
+  /* 가운데 배치 */
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  background-color: #f7f7f7;
+
+  overflow: hidden;
+
+  /* 컨텐츠랩 부분에 플렉스 속성을 줘서 확인 버튼을 최하단에 위치시키기 위함 */
+  display: flex;
+  flex-direction: column;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.titleWrap {
+  margin-top: 87px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #262626;
+}
+
+.contentWrap {
+  margin-top: 26px;
+  flex: 1;
+  /* 플렉스 값을 통해 버튼을 맨 하단에 위치 */
+}
+
+.inputTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.inputWrap {
+  display: flex;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 8px;
+  border: 1px solid #969292;
+  background-color: white;
+}
+
+/* 인풋창이 포커스 되면 보라색으로 변경 */
+.inputWrap:focus-within {
+  border: 1px solid #9e30f4;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 17px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.input::placeholder {
+  color: #dadada;
+}
+
+.errorMessageWrap {
+  margin-top: 8px;
+  color: #ef0000;
+  font-size: 12px;
+}
+
+.bottomButton {
+  width: 100%;
+  height: 48px;
+  border: none;
+  font-weight: 700;
+  background-color: #9e30f4;
+  border-radius: 64px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+/* 버튼이 활성화되지 않았을 때의 스타일 */
+.bottomButton:disabled {
+  background-color: #dadada;
+  color: white;
 }
